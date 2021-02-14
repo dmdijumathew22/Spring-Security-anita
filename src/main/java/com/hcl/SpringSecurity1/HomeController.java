@@ -23,15 +23,13 @@ public class HomeController {
 	public String logoutPage() {
 		return "logout";
 	}
-	
-	@RequestMapping("/user")
-	public String user() {
-		return "userpage";
-	}
-	
+
+	/*
+	 * @RequestMapping("/user") public String user() { return "userpage"; }
+	 */
 	@RequestMapping("/admin")
 	public String admin() {
-		return "adminpage";
+		return "admin";
 	}
 	
 	
