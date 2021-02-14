@@ -1,5 +1,7 @@
 package com.hcl.SpringSecurity1;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,14 +17,14 @@ public class MyUserDetailsService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
-		User user =repo.findByUsername(username);
+		Optional<User> user =repo.findByUsername(username);
 		if(user==null)
 			throw new UsernameNotFoundException("User 404");
 		
 		
 		
 		
-		return new UserPrincipal(user);
+		return user.map(UserPrincipal::new).get();
 	}
 
 }

@@ -2,13 +2,16 @@ package com.hcl.SpringSecurity1;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+//@Table(name = "user")
 public class User {
 	@Id
 	private long id;
 	private String username;
 	private String password;
+	private String roles;
 	public long getId() {
 		return id;
 	}
@@ -26,6 +29,12 @@ public class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getRoles() {
+		return roles;
+	}
+	public void setRoles(String roles) {
+		this.roles = roles;
 	}
 
 }

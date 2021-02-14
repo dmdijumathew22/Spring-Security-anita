@@ -7,10 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
- You are logged in as User
-	<br>
-	<a href="/admin">ADMIN</a>
-	<br>
-	<a href="/logout">Logout</a>
+		You are logged in as admin
+	<a href="/logout">logout</a>
 </body>
 </html>
